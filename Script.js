@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 5,
     dx: 0,
     fireCooldown: 0,
-    fireRate: 1,
+    fireRate: 25,
   };
 
   const bullets = [];
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
     player.y = canvas.height - 50;
     player.speed = 5;
     player.fireCooldown = 0;
-    player.fireRate = 1;
+    player.fireRate = 25;
     document.getElementById("gameOver").style.display = "none";
     document.getElementById("restartButton").style.display = "none";
     draw();
