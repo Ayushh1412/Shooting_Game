@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #111;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+#gameContainer {
+  position: relative;
+}
+.flex-container {
+  display: flex;
+  margin: 10px;
+  padding: 2px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #fff;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+#score {
+  font-size: 24px;
+}
+
+#restartButton,
+#settingsButton {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  display: none;
+}
+
+#difficultySlider {
+  margin-top: 10px;
+}
+
+#settingsIcon {
+  font-size: 24px;
+  cursor: pointer;
+}
+#settings {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+}
