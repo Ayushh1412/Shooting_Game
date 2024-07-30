@@ -6,7 +6,7 @@
   <title>Shooter</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onContextMenu="return false">
   <div id="gameContainer">
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <div id="hud">
@@ -22,8 +22,9 @@
     </div>
     <div id="gameOver">Game Over! Your Score: <span id="finalScore">0</span></div>
     <div id="touchControls">
-      <button class="control-button" id="leftButton">&#9664;</button>
-    <button class="control-button" id="rightButton">&#9654;</button>
+      <button  class="control-button" id="leftButton"><img src="left-arrow.png" alt="<" ></button>
+      <button  class="control-button" id="rightButton"><img src="right-arrow.png" alt=">" </button>
+    
     </div>
   </div>
   <script src="script.js"></script>
