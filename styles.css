@@ -8,17 +8,26 @@ body {
 
 #gameContainer {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.flex-container {
+/* .flex-container {
   display: flex;
   margin: 10px;
   padding: 2px;
-}
+} */
 
 canvas {
   display: block;
   margin: 0 auto;
   border: 2px solid #fff;
+  max-width: 100%;
+  height: auto;
 }
 
 #hud {
@@ -29,10 +38,12 @@ canvas {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  flex-wrap: wrap;
 }
 
 #score {
   font-size: 24px;
+  margin: 5px 0;
 }
 
 #restartButton,
@@ -70,10 +81,109 @@ canvas {
 }
 #settings {
   display: none;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   text-align: center;
   font-size: 16px;
+}
+#touchControls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: row;
+}
+
+.control-button {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 24px;
+  color: #fff;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  #gameContainer {
+    padding: 10px;
+  }
+
+  canvas {
+    width: 90%;
+    height: auto;
+  }
+
+  #hud {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #score {
+    font-size: 20px;
+  }
+
+  #restartButton,
+  #settingsButton {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #gameOver {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  #score {
+    font-size: 18px;
+  }
+
+  #restartButton,
+  #settingsButton {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #gameOver {
+    font-size: 24px;
+  }
+
+  #settingsIcon {
+    font-size: 20px;
+  }
+
+  #touchControls {
+    display: flex;
+  }
+
+  .control-button {
+    padding: 15px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #score {
+    font-size: 16px;
+  }
+
+  #restartButton,
+  #settingsButton {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  #gameOver {
+    font-size: 20px;
+  }
+
+  .control-button {
+    padding: 10px;
+    font-size: 18px;
+  }
 }

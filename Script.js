@@ -254,11 +254,34 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleSettings();
     }
   });
-
+  // Touch Controls
   document.addEventListener("keyup", function (e) {
     if (e.key === "ArrowRight"|| e.key === "ArrowLeft") {
       player.dx = 0;
     }
+  });
+
+  document.getElementById("leftButton").addEventListener("touchstart", function () {
+    player.dx = -player.speed;
+  });
+
+  document.getElementById("rightButton").addEventListener("touchstart", function () {
+    player.dx = player.speed;
+  });
+
+  document.getElementById("leftButton").addEventListener("touchend", function () {
+    player.dx = 0;
+  });
+
+  document.getElementById("rightButton").addEventListener("touchend", function () {
+    player.dx = 0;
+  });
+
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth > 800 ? 800 : window.innerWidth;
+    canvas.height = window.innerHeight > 600 ? 600 : window.innerHeight;
+    player.x = canvas.width / 2;
+    player.y = canvas.height - 50;
   });
 
   update();
